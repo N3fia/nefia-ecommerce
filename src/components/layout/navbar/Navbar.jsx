@@ -1,13 +1,20 @@
-import "./Navbar/navbar.css";
+import LogoNoBackground from "../../../assets/images/LogoNoBackground.png";
+import { CartWidget } from "../../common/cartWidget/CartWidget";
+import "./navbar.css";
 
 export const Navbar = () => {
 	return (
-		<nav>
-			<h2>logo</h2>
-			<li>c1</li>
-			<li>c2</li>
-			<li>c3</li>
-			<li>c4</li>
-		</nav>
+		<>
+			<nav className="nav-conta">
+				<img src={LogoNoBackground} alt="brand logo" className="logo" />
+				<ul className="list">
+					<li>Wool</li>
+					<li>Needles</li>
+					<li>Accessories</li>
+					<li>Patterns</li>
+				</ul>
+				<CartWidget />
+			</nav>
+		</>
 	);
 };
