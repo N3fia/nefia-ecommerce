@@ -14,12 +14,10 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 
 export const CartWidget = () => {
 	return (
-		<IconButton aria-label="cart">
+		<IconButton aria-label="cart" style={{ margin: 20 }}>
 			<StyledBadge badgeContent={3} color="secondary">
 				<ShoppingCartIcon />
 			</StyledBadge>
 		</IconButton>
 	);
 };
-
-export default CartWidget;
