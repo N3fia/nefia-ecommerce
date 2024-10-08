@@ -8,7 +8,7 @@ export const Navbar = () => {
 			<nav className="nav-conta">
 				<img src={LogoNoBackground} alt="brand logo" className="logo" />
 				<ul className="list">
-					<li>Wool</li>
+					<li>Yarn</li>
 					<li>Needles</li>
 					<li>Accessories</li>
 					<li>Patterns</li>
