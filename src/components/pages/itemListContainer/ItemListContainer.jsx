@@ -5,7 +5,7 @@ export const ItemListContainer = ({ greeting, intro }) => {
 		<div className="welcome-message">
 			<h1>{greeting}</h1>
 			<p>{intro}</p>
-			<a href="#shop" className="cta-button">
+			<a href="#store" className="cta-button">
 				Shop Now
 			</a>
 		</div>
