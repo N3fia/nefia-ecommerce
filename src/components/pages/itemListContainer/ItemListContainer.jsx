@@ -1,29 +1,19 @@
+import { useEffect, useState } from "react";
 import { products } from "../../../products";
-import Cards from "../../common/cards/Cards";
-import "./itemListContainer.css";
-
-let myProductsPromise = new Promise((res, rej) => {
-	setTimeout(() => {
-		if (products.length === 0) {
-			rej("No se hay productos");
-		} else {
-			res(products);
-		}
-	}, 2500);
-});
+import ItemList from "./ItemList";
+// import { Cards } from "../../common/cards/Car
+// import "./itemListContainer.css";
 
 export const ItemListContainer = () => {
-	myProductsPromise.then((data) => {}).catch((err) => {});
-	return (
-		// <div className="welcome-message">
-		// 	<h1>{greeting}</h1>
-		// 	<p>{intro}</p>
-		// 	<a href="#store" className="cta-button">
-		// 		Shop Now
-		// 	</a>
-		// </div>
-		<Cards />
-	);
+	const [items, setItems] = useState([]);
+	useEffect(() => {
+		const getProducts = new Promise((resolve, reject) => {
+			resolve(products);
+		});
+		getProducts.then((res) => {
+			setItems(res);
+		});
+	}, []);
+	// return <ItemList ite{ms={items} />;
+	return <ItemList items={items} />;
 };
-
-export default ItemListContainer;
