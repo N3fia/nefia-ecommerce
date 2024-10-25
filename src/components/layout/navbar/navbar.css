@@ -14,40 +14,38 @@
 	list-style-type: none;
 	gap: 100px;
 } */
+/* 
+
+/* Basic styles for the navbar */
 .nav-conta {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	background-color: #8d6e63;
-	padding: 0 20px;
-	margin-bottom: 50px;
+	padding: 1rem 2rem;
+	background-color: #fff;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
 	width: 150px;
 	height: auto;
-	padding: 20px 0 10px 0;
 }
 
 .list {
 	display: flex;
+	gap: 2rem;
 	list-style-type: none;
-	gap: 50px;
-	padding: 0;
 	margin: 0;
+	padding: 0;
 }
 
 .list a {
 	text-decoration: none;
-	color: white;
-	font-size: 18px;
-	transition: color 0.3s ease-in-out;
+	color: black;
+	font-weight: bold;
 }
 
-.list a:hover {
-	color: #d7ccc8;
-}
-
+/* Mobile responsive: Flex direction column for smaller screens */
 @media (max-width: 768px) {
 	.nav-conta {
 		flex-direction: column;
@@ -56,17 +54,37 @@
 
 	.list {
 		flex-direction: column;
-		gap: 20px;
+		width: 100%;
+		display: none; /* Initially hidden on mobile */
+	}
+
+	.list a {
+		padding: 1rem;
+		width: 100%;
+	}
+
+	.nav-conta.active .list {
+		display: flex; /* Show menu when active */
 	}
 }
 
-@media (max-width: 480px) {
-	.logo {
-		width: 100px;
-	}
+/* Hamburger menu styles */
+.hamburger {
+	display: none;
+	cursor: pointer;
+	flex-direction: column;
+	gap: 0.25rem;
+}
 
-	.list {
-		gap: 15px;
-		font-size: 16px;
+.hamburger span {
+	width: 30px;
+	height: 3px;
+	background-color: black;
+	border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+	.hamburger {
+		display: flex; /* Show hamburger on mobile */
 	}
 }
