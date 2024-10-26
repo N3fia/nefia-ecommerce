@@ -1,6 +1,6 @@
 import "./cards.css";
 
-export const Cards = ({ title, description, price, stock, image }) => {
+export const Cards = ({ title, description, price, image }) => {
 	return (
 		<div className="wrapper">
 			<div className="product-img">

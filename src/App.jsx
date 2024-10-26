@@ -1,15 +1,21 @@
 import { Navbar } from "./components/layout/navbar/Navbar";
-import ItemDetailContainer from "./components/pages/itemDetail/ItemDetailContainer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ItemListContainer } from "./components/pages/itemListContainer/ItemListContainer";
-
+import CartContainer from "./components/pages/cart/CartContainer";
+import NotFound from "./components/pages/404/NotFound";
 function App() {
 	return (
-		<div>
+		<BrowserRouter>
 			<Navbar />
-
-			<ItemListContainer />
-			<ItemDetailContainer />
-		</div>
+			<Routes>
+				<Route path="/" element={<ItemListContainer />} />
+				<Route path="/cart" element={<CartContainer />} />
+				<Route path="" />
+				<Route />
+				<Route path="*" element={<NotFound />} />
+				{/* hacer un componenete con un boton para volver al home cuando se hitea una Route que no existe */}
+			</Routes>
+		</BrowserRouter>
 	);
 }
 
