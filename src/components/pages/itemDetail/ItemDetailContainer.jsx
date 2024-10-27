@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
 import { products } from "../../../products";
+import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = () => {
-	let id = "2";
+	const { id } = useParams();
 	const [item, setItem] = useState({});
 
 	useEffect(() => {

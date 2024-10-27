@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
 import "./cards.css";
 
-export const Cards = ({ title, description, price, image }) => {
+export const Cards = ({ id, title, description, price, image }) => {
 	return (
 		<div className="wrapper">
 			<div className="product-img">
@@ -15,7 +16,9 @@ export const Cards = ({ title, description, price, image }) => {
 					<p>
 						<span>{price}</span>$
 					</p>
-					<button type="button">Details</button>
+					<Link to={`/itemDetail/${id}`}>
+						<button type="button">Details</button>
+					</Link>
 				</div>
 			</div>
 		</div>

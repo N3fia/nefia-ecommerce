@@ -12,6 +12,7 @@ const ItemList = ({ items }) => {
 					description={description}
 					price={price}
 					stock={stock}
+					id={id}
 				/>
 			))}
 		</div>
