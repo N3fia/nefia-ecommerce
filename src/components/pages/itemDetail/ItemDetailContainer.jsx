@@ -12,7 +12,11 @@ const ItemDetailContainer = () => {
 		// console.log(productSelected);
 		setItem(productSelected);
 	}, [id]);
-	return <ItemDetail item={item} />;
+	const addToCart = (qty) => {
+		let obj = { ...item, quantity: qty };
+		console.log(obj);
+	};
+	return <ItemDetail item={item} addToCart={addToCart} />;
 };
 
 export default ItemDetailContainer;

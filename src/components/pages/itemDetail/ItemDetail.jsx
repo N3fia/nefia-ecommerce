@@ -1,5 +1,6 @@
-const ItemDetail = ({ item }) => {
-	console.log(item);
+import { Counter } from "../../common/counter/Counter";
+
+const ItemDetail = ({ item, addToCart }) => {
 	return (
 		<div>
 			<h2>{item.title}</h2>
@@ -11,6 +12,8 @@ const ItemDetail = ({ item }) => {
 			<h3>{item.description}</h3>
 			<h3>Availability: {item.stock}</h3>
 			<h3>Category: {item.category}</h3>
+
+			<Counter stock={item.stock} addToCart={addToCart} />
 		</div>
 	);
 };
