@@ -1,7 +1,7 @@
 import { useState } from "react";
 import CounterPres from "./CounterPres";
 
-export const Counter = ({ stock, addToCart }) => {
+export const Counter = ({ stock, onAdd }) => {
 	const [counter, setCounter] = useState(0);
 
 	const add = () => {
@@ -12,5 +12,5 @@ export const Counter = ({ stock, addToCart }) => {
 	const subs = () => {
 		setCounter(counter - 1);
 	};
-	return <CounterPres counter={counter} add={add} addToCart={addToCart} subs={subs}/>;
+	return <CounterPres counter={counter} add={add} onAdd={onAdd} subs={subs} />;
 };

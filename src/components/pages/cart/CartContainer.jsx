@@ -1,7 +1,12 @@
+import { Button } from "@mui/material";
+import { Link } from "react-router-dom";
+
 const CartContainer = () => {
 	return (
 		<div>
-			<h1>carritooo</h1>
+			<Link to="/checkout">
+				<Button>Checkout</Button>
+			</Link>
 		</div>
 	);
 };
