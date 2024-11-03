@@ -52,19 +52,19 @@ const CheckOutContainer = () => {
 					type="text"
 					placeholder="Jhon Doe"
 					name="name"
-					onChangeCapture={captUserData}
+					onChange={captUserData}
 				></Input>
 				<Input
 					type="text"
 					placeholder="email@email.com"
 					name="email"
-					onChangeCapture={captUserData}
+					onChange={captUserData}
 				></Input>
 				<Input
 					type="text"
 					placeholder="+123456789"
-					name="phone"
-					onChangeCapture={captUserData}
+					name="phoneNum"
+					onChange={captUserData}
 				></Input>
 				<Button type="submit">Comprar</Button>
 				<Button>Cancelar</Button>
