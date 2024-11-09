@@ -1,11 +1,12 @@
 import { useState } from "react";
 import CounterPres from "./CounterPres";
 
-export const Counter = ({ stock, onAdd }) => {
+export const Counter = ({ stock, onAdd, pQtyCart }) => {
 	const [counter, setCounter] = useState(1);
+	// const cartQty =
 
 	const add = () => {
-		stock > counter
+		stock - pQtyCart > counter
 			? setCounter(counter + 1)
 			: alert("no more items are available right now");
 	};

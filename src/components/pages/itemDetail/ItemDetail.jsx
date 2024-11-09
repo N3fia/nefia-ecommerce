@@ -1,6 +1,6 @@
 import { Counter } from "../../common/counter/Counter";
 
-const ItemDetail = ({ item, onAdd }) => {
+const ItemDetail = ({ item, onAdd, pQtyCart }) => {
 	return (
 		<div>
 			<h2>{item.title}</h2>
@@ -13,7 +13,7 @@ const ItemDetail = ({ item, onAdd }) => {
 			<h3>Availability: {item.stock}</h3>
 			<h3>Category: {item.category}</h3>
 
-			<Counter stock={item.stock} onAdd={onAdd} />
+			<Counter stock={item.stock} onAdd={onAdd} pQtyCart={pQtyCart} />
 		</div>
 	);
 };
