@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import { toast } from "sonner";
 
 export const CartContext = createContext();
 
@@ -45,11 +46,17 @@ export const CartContextProvider = ({ children }) => {
 			? cart.map((e) => {
 					if (e.id === product.id) {
 						if (e.quantity + (product.quantity || 0) > product.stock) {
-							alert(
-								"Can't add any more, available Stock is already in your cart."
+							toast.error(
+								"Can't add any more, available Stock is already in your cart.",
+								{ position: "bottom-right" }
 							);
+
+							// alert(
+							// 	"Can't add any more, available Stock is already in your cart."
+							// );
 							return e;
 						} else {
+							toast.success("Added to cart", { position: "bottom-right" });
 							return { ...e, quantity: e.quantity + (product.quantity || 0) };
 						}
 					}

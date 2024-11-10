@@ -3,6 +3,7 @@ import ItemDetail from "./ItemDetail";
 import { products } from "../../../products";
 import { useParams } from "react-router-dom";
 import { CartContext } from "../../../context/CartContext";
+// import { toast } from "sonner";
 
 const ItemDetailContainer = () => {
 	const { id } = useParams();
@@ -15,9 +16,11 @@ const ItemDetailContainer = () => {
 		// console.log(productSelected);
 		setItem(productSelected);
 	}, [id]);
+
 	const onAdd = (qty) => {
 		let obj = { ...item, quantity: qty };
 		addToCart(obj);
+		// toast.success("Added to cart", { position: "bottom-right" });
 		// console.log(obj);
 	};
 	return <ItemDetail item={item} onAdd={onAdd} pQtyCart={pQtyCart} />;

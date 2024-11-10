@@ -6,10 +6,12 @@ import NotFound from "./components/pages/404/NotFound";
 import ItemDetailContainer from "./components/pages/itemDetail/ItemDetailContainer";
 import CheckOutContainer from "./components/pages/checkOut/CheckOutContainer";
 import { CartContextProvider } from "./context/CartContext";
+import { Toaster } from "sonner";
 
 function App() {
 	return (
 		<BrowserRouter>
+			<Toaster duration={3000} richColors position="top-right" closeButton />
 			<CartContextProvider>
 				<Navbar />
 				<Routes>
