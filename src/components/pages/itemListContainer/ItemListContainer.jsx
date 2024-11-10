@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { products } from "../../../products";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
+import CircularProgress from "@mui/material/CircularProgress";
+import { Box } from "@mui/material";
 
 export const ItemListContainer = () => {
 	const { category } = useParams();
@@ -11,12 +13,30 @@ export const ItemListContainer = () => {
 			(producto) => producto.category === category
 		);
 
-		const getProducts = new Promise((resolve, reject) => {
+		const getProducts = new Promise((resolve) => {
 			resolve(category ? catName : products);
 		});
 		getProducts.then((res) => {
-			setItems(res);
+			setTimeout(() => {
+				setItems(res);
+			}, 2000);
 		});
 	}, [category]);
-	return <ItemList items={items} />;
+
+	// if (items.length === 0) {
+	// 	return <h1>loading...</h1>;
+	// }
+	return (
+		<div>
+			<h2>All Products</h2>
+
+			{items.length === 0 ? (
+				<Box sx={{ display: "flex" }}>
+					<CircularProgress />
+				</Box>
+			) : (
+				<ItemList items={items} />
+			)}
+		</div>
+	);
 };

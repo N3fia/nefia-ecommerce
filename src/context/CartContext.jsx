@@ -22,30 +22,43 @@ export const CartContextProvider = ({ children }) => {
 	// 		setCart([...cart, product]);
 	// 	}
 	// };
+
+	//esta es la que funciona ESTA ANDA
+	// const addToCart = (product) => {
+	// 	const isInCart = cart.some((e) => e.id === product.id);
+	// 	const uCart = isInCart
+	// 		? cart.map((e) =>
+	// 				e.id === product.id
+	// 					? { ...e, quantity: e.quantity + (product.quantity || 0) }
+	// 					: e
+	// 		  )
+	// 		: [...cart, { ...product, quantity: product.quantity || 1 }];
+
+	// 	setCart(uCart);
+	// };
+
+	//INTENTO TDE NO AGREGAR AL CARRITO SI EL STOCK MAXIMO DEL PRODUCTO YA ESTA AHI
+
 	const addToCart = (product) => {
 		const isInCart = cart.some((e) => e.id === product.id);
 		const uCart = isInCart
-			? cart.map((e) =>
-					e.id === product.id
-						? { ...e, quantity: e.quantity + (product.quantity || 0) }
-						: e
-			  )
+			? cart.map((e) => {
+					if (e.id === product.id) {
+						if (e.quantity + (product.quantity || 0) > product.stock) {
+							alert(
+								"Can't add any more, available Stock is already in your cart."
+							);
+							return e;
+						} else {
+							return { ...e, quantity: e.quantity + (product.quantity || 0) };
+						}
+					}
+					return e;
+			  })
 			: [...cart, { ...product, quantity: product.quantity || 1 }];
 
 		setCart(uCart);
 	};
-
-	//revisar porque con el ternario me devuelve un NaN la qty del carrito
-	// const addToCart = (product) => {
-	// 	let isInCart = cart.some((e) => e.id === product.id);
-	// 	let uCart = isInCart
-	// 		? cart.map((e) =>
-	// 				e.id === product.id ? { ...e, quantity: e.quantity + product.qty } : e
-	// 		  )
-	// 		: [...cart, product];
-	// 	setCart(uCart);
-	// };
-
 	const emptyCart = () => {
 		setCart([]);
 	};
