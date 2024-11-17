@@ -1,6 +1,6 @@
 export const products = [
 	{
-		id: "1",
+		// id: "1",
 		title: "Malabrigo Rasta Deep",
 		price: 400,
 		stock: 3,
@@ -11,7 +11,7 @@ export const products = [
 		category: "yarn",
 	},
 	{
-		id: "2",
+		// id: "2",
 		title: "Malabrigo Rasta Confetti",
 		price: 350,
 		stock: 9,
@@ -22,7 +22,7 @@ export const products = [
 		category: "yarn",
 	},
 	{
-		id: "3",
+		// id: "3",
 		title: "Malabrigo Rios Revo",
 		price: 399,
 		stock: 5,
@@ -33,7 +33,7 @@ export const products = [
 		category: "yarn",
 	},
 	{
-		id: "4",
+		// id: "4",
 		title: "Malabrigo Rios Fire",
 		price: 550,
 		stock: 12,
@@ -44,7 +44,7 @@ export const products = [
 		category: "yarn",
 	},
 	{
-		id: "5",
+		// id: "5",
 		title: "Revo Swift",
 		price: 2200,
 		stock: 4,
@@ -55,7 +55,7 @@ export const products = [
 		category: "accessories",
 	},
 	{
-		id: "6",
+		// id: "6",
 		title: "Revo Tape",
 		price: 150,
 		stock: 93,
@@ -66,7 +66,7 @@ export const products = [
 		category: "accessories",
 	},
 	{
-		id: "7",
+		// id: "7",
 		title: "Revo Markers",
 		price: 50,
 		stock: 14,
@@ -77,7 +77,7 @@ export const products = [
 		category: "accessories",
 	},
 	{
-		id: "9",
+		// id: "9",
 		title: "Revo Wood",
 		price: 550,
 		stock: 8,
@@ -88,7 +88,7 @@ export const products = [
 		category: "needles",
 	},
 	{
-		id: "10",
+		// id: "10",
 		title: "Revo DPNs",
 		price: 600,
 		stock: 15,
@@ -99,7 +99,7 @@ export const products = [
 		category: "needles",
 	},
 	{
-		id: "11",
+		// id: "11",
 		title: "Revo Socks",
 		price: 5,
 		stock: 999,
@@ -110,7 +110,7 @@ export const products = [
 		category: "patterns",
 	},
 	{
-		id: "12",
+		// id: "12",
 		title: "Revo Sweater",
 		price: 15,
 		stock: 999,

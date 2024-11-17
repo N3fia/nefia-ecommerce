@@ -1,9 +1,11 @@
 import { useContext, useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
-import { products } from "../../../products";
+// import { products } from "../../../products";
 import { useParams } from "react-router-dom";
 import { CartContext } from "../../../context/CartContext";
 // import { toast } from "sonner";
+import { db } from "../../../firebaseConf";
+import { collection, doc, getDoc } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
 	const { id } = useParams();
@@ -12,9 +14,14 @@ const ItemDetailContainer = () => {
 	let pQtyCart = pTotalQty(id);
 
 	useEffect(() => {
-		let productSelected = products.find((producto) => producto.id === id);
-		// console.log(productSelected);
-		setItem(productSelected);
+		const prodColl = collection(db, "products");
+		const docRef = doc(prodColl, id);
+		getDoc(docRef).then((res) => {
+			setItem({ ...res.data(), id: res.id });
+		});
+		// let productSelected = products.find((producto) => producto.id === id);
+		// // console.log(productSelected);
+		// setItem(productSelected);
 	}, [id]);
 
 	const onAdd = (qty) => {

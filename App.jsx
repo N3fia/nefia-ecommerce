@@ -1,11 +1,11 @@
-import { Navbar } from "./components/layout/navbar/Navbar";
+import { Navbar } from "./src/components/layout/navbar/Navbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { ItemListContainer } from "./components/pages/itemListContainer/ItemListContainer";
-import CartContainer from "./components/pages/cart/CartContainer";
-import NotFound from "./components/pages/404/NotFound";
-import ItemDetailContainer from "./components/pages/itemDetail/ItemDetailContainer";
-import CheckOutContainer from "./components/pages/checkOut/CheckOutContainer";
-import { CartContextProvider } from "./context/CartContext";
+import { ItemListContainer } from "./src/components/pages/itemListContainer/ItemListContainer";
+import CartContainer from "./src/components/pages/cart/CartContainer";
+import NotFound from "./src/components/pages/404/NotFound";
+import ItemDetailContainer from "./src/components/pages/itemDetail/ItemDetailContainer";
+import CheckOutContainer from "./src/components/pages/checkOut/CheckOutContainer";
+import { CartContextProvider } from "./src/context/CartContext";
 import { Toaster } from "sonner";
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
 				<Routes>
 					<Route path="/" element={<ItemListContainer />} />
 					<Route path="/cart" element={<CartContainer />} />
-					<Route path="/category/:name" element={<ItemListContainer />} />
+					<Route path="/category/:category" element={<ItemListContainer />} />
 					<Route path="/itemDetail/:id" element={<ItemDetailContainer />} />
 
 					<Route path="/checkout" element={<CheckOutContainer />} />

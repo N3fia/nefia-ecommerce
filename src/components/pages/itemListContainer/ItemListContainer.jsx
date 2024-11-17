@@ -1,65 +1,68 @@
 import { useEffect, useState } from "react";
-import { products } from "../../../products";
+
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
 
 import { Box, Typography } from "@mui/material";
 import CircularWithValueLabel from "../../common/circularWithValueLabel/CircularWithValueLabel";
 import "./itemListContainer.css";
+import { db } from "../../../firebaseConf";
+import { collection, getDocs, query, where, addDoc } from "firebase/firestore";
+// import { products } from "../../../products";
 
 export const ItemListContainer = () => {
-	const { category } = useParams();
+	const { name } = useParams();
 	const [items, setItems] = useState([]);
-	useEffect(() => {
-		const catName = products.filter(
-			(producto) => producto.category === category
-		);
 
-		const getProducts = new Promise((resolve) => {
-			resolve(category ? catName : products);
+	useEffect(() => {
+		const prodColl = collection(db, "products");
+		let docsRef = prodColl;
+		if (name) {
+			docsRef = query(prodColl, where("category", "==", name));
+		}
+		getDocs(docsRef).then((res) => {
+			let legibleArr = res.docs.map((doc) => {
+				return {
+					...doc.data(),
+					id: doc.id,
+				};
+			});
+
+			setItems(legibleArr);
 		});
-		getProducts.then((res) => {
-			setTimeout(() => {
-				setItems(res);
-			}, 2000);
-		});
-	}, [category]);
+
+		// const catName = products.filter(
+		// 	(producto) => producto.category === category
+		// );
+		// const getProducts = new Promise((resolve) => {
+		// 	resolve(category ? catName : products);
+		// });
+		// getProducts.then((res) => {
+		// 	setTimeout(() => {
+		// 		setItems(res);
+		// 	}, 2000);
+		// });
+	}, [name]);
 
 	// if (items.length === 0) {
 	// 	return <h1>loading...</h1>;
 	// }
+
+	// const funcionParaAgregar = () => {
+	// 	const productsCollection = collection(db, "products");
+	// 	products.forEach((product) => {
+	// 		addDoc(productsCollection, product);
+	// 	});
+	// };
+
+	if (items.length === 0) {
+		return (
+			<Box className="item-list-loader">
+				<CircularWithValueLabel />
+			</Box>
+		);
+	}
 	return (
-		// <div>
-		// 	<h2>All Products</h2>
-
-		// 	{items.length === 0 ? (
-		// 		<Box>
-		// 			<CircularWithValueLabel />
-		// 		</Box>
-		// 	) : (
-		// 		<ItemList items={items} />
-		// 	)}
-		// </div>
-
-		// <Box
-		// 	sx={{
-		// 		display: "flex",
-		// 		flexDirection: "column",
-		// 		alignItems: "center",
-		// 		justifyContent: "center",
-		// 		minHeight: "100vh",
-		// 	}}
-		// >
-		// 	<Typography variant="h2" gutterBottom>
-		// 		All Products
-		// 	</Typography>
-
-		// 	{items.length === 0 ? (
-		// 		<CircularWithValueLabel />
-		// 	) : (
-		// 		<ItemList items={items} />
-		// 	)}
-		// </Box>
 		<div className="item-list-container">
 			<Typography
 				variant="h2"
@@ -70,13 +73,9 @@ export const ItemListContainer = () => {
 				All Products
 			</Typography>
 
-			{items.length === 0 ? (
-				<Box className="item-list-loader">
-					<CircularWithValueLabel />
-				</Box>
-			) : (
-				<ItemList items={items} />
-			)}
+			<ItemList items={items} />
+
+			{/* <button onClick={funcionParaAgregar}>cargar prod</button> */}
 		</div>
 	);
 };

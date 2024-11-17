@@ -7,33 +7,13 @@ const CheckOutContainer = () => {
 		email: "",
 		phoneNum: "",
 	});
-	// const [name, setName] = useState("");
-	// const [email, setEmail] = useState("");
-	// const [phoneNum, setPhoneNum] = useState("");
 
 	const fSubmit = (eve) => {
 		eve.preventDefault();
-		// console.log("send form");
-		// console.log(name);
-		// console.log(email);
-		// console.log(phoneNum);
+
 		console.log(userData);
 	};
-	// const captName = (eve) => {
-	// 	// setName(eve.target.value);
-	// 	// setUserData(eve.target.value)
-	// 	// setUserData({ name: eve.target.value });
-	// 	setUserData({ ...userData, name: eve.target.value });
-	// };
 
-	// const captEmail = (eve) => {
-	// 	// setEmail(eve.target.value);
-	// 	setUserData({ ...userData, email: eve.target.value });
-	// };
-	// const captPhoneNum = (eve) => {
-	// 	// setPhoneNum(eve.target.value);
-	// 	setUserData({ ...userData, phoneNum: eve.target.value });
-	// };
 	const captUserData = (eve) => {
 		const { name, value } = eve.target;
 		setUserData({ ...userData, [name]: value });
@@ -41,13 +21,6 @@ const CheckOutContainer = () => {
 	return (
 		<div>
 			<form onSubmit={fSubmit}>
-				{/* <TextField
-					required
-					id="outlined-required"
-					label="Required"
-					defaultValue="miemail@email.com"
-					name="email"
-				/> */}
 				<Input
 					type="text"
 					placeholder="Jhon Doe"
