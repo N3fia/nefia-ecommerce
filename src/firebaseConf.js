@@ -6,12 +6,12 @@ import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-	apiKey: "AIzaSyBKio8nH6HhSpqsiqNm40UMj2lm0t5vVLQ",
-	authDomain: "stitchrevobe.firebaseapp.com",
-	projectId: "stitchrevobe",
-	storageBucket: "stitchrevobe.firebasestorage.app",
-	messagingSenderId: "180871992716",
-	appId: "1:180871992716:web:4eff9e1575a21e61e672a9",
+	apiKey: import.meta.env.VITE_API_KEY,
+	authDomain: import.meta.env.VITE_AUTH,
+	projectId: import.meta.env.VITE_ID,
+	storageBucket: import.meta.env.VITE_BUCKET,
+	messagingSenderId: import.meta.env.VITE_SENDER_ID,
+	appId: import.meta.env.VITE_APP_ID,
 };
 
 // Initialize Firebase
