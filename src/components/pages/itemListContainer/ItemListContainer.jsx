@@ -7,7 +7,7 @@ import { Box, Typography } from "@mui/material";
 import CircularWithValueLabel from "../../common/circularWithValueLabel/CircularWithValueLabel";
 import "./itemListContainer.css";
 import { db } from "../../../firebaseConf";
-import { collection, getDocs, query, where, addDoc } from "firebase/firestore";
+import { collection, getDocs, query, where } from "firebase/firestore";
 // import { products } from "../../../products";
 
 export const ItemListContainer = () => {
