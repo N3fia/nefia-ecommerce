@@ -1,0 +1,35 @@
+span.image-container {
+	display: flex;
+	padding: 25px;
+	flex-direction: column;
+	align-items: center;
+}
+
+span.image-container img {
+	width: 900px;
+	height: 500px;
+}
+
+span button.product-price-btn {
+	float: right;
+	/* display: inline-block; */
+	height: 300px;
+	width: 276px;
+	margin: 50px 40px 0 16px;
+	box-sizing: border-box;
+	border: transparent;
+	border-radius: 60px;
+	font-family: "Raleway", sans-serif;
+	font-size: 14px;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 0.2em;
+	color: #ffffff;
+	background-color: #9cebd5;
+	cursor: pointer;
+	outline: none;
+}
+
+.product-price-btn button:hover {
+	background-color: #79b0a1;
+}

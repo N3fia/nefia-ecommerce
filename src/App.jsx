@@ -22,7 +22,6 @@ function App() {
 
 					<Route path="/checkout" element={<CheckOutContainer />} />
 					<Route path="*" element={<NotFound />} />
-					{/* hacer un componenete con un boton para volver al home cuando se hitea una Route que no existe */}
 				</Routes>
 			</CartContextProvider>
 		</BrowserRouter>
