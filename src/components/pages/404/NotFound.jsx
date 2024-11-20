@@ -6,10 +6,10 @@ const NotFound = () => {
 		<div>
 			<span className="image-container">
 				<img
-					src="https://res.cloudinary.com/dhmbftmbi/image/upload/v1732052475/404_1000_lrznq8.png"
+					src="./../src/assets/images/404_1000.svg"
 					alt="404 image - page not found"
 				/>
-				<div className="product-price-btn">
+				<div className="btn">
 					<Link to={`/`}>
 						<button type="button">Home</button>
 					</Link>

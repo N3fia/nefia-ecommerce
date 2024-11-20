@@ -7,6 +7,10 @@ import ItemDetailContainer from "./components/pages/itemDetail/ItemDetailContain
 import CheckOutContainer from "./components/pages/checkOut/CheckOutContainer";
 import { CartContextProvider } from "./context/CartContext";
 import { Toaster } from "sonner";
+import "@fontsource/roboto/300.css"; // Weight 300
+import "@fontsource/roboto/400.css"; // Weight 400
+import "@fontsource/roboto/500.css"; // Weight 500
+import "@fontsource/roboto/700.css"; // Weight 700
 
 function App() {
 	return (

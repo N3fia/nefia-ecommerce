@@ -1,9 +1,10 @@
-body {
+/* body {
 	background-color: antiquewhite;
 }
 .wrapper {
-	height: 420px;
-	width: 654px;
+	display: flex;
+	height: 210px;
+	width: 327px;
 	margin: 50px auto;
 	border-radius: 7px 7px 7px 7px;
 	-webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
@@ -13,8 +14,8 @@ body {
 
 .product-img {
 	float: left;
-	height: 420px;
-	width: 327px;
+	height: 210px;
+	width: 164px;
 }
 
 .product-img img {
@@ -23,27 +24,27 @@ body {
 
 .product-info {
 	float: left;
-	height: 420px;
-	width: 327px;
+	height: 210px;
+	width: 164px;
 	border-radius: 0 7px 10px 7px;
 	background-color: #ffffff;
 }
 
 .product-text {
-	height: 300px;
-	width: 327px;
+	height: 200px;
+	width: 164px;
 }
 
 .product-text h1 {
 	margin: 0 0 0 38px;
-	padding-top: 52px;
-	font-size: 34px;
+	padding-top: 10px;
+	font-size: larger;
 	color: #474747;
 }
 
 .product-text h1,
 .product-price-btn p {
-	font-family: "Bentham", serif;
+	font-family: "Roboto", sans-serif;
 }
 
 .product-text h2 {
@@ -54,7 +55,7 @@ body {
 	text-transform: uppercase;
 	color: #d2d2d2;
 	letter-spacing: 0.2em;
-}
+} 
 
 .product-text p {
 	height: 125px;
@@ -107,12 +108,101 @@ span {
 	font-weight: 500;
 	text-transform: uppercase;
 	letter-spacing: 0.2em;
-	color: #ffffff;
-	background-color: #9cebd5;
+	color: #f4eee0;
+	background-color: #6d5d6e;
 	cursor: pointer;
 	outline: none;
 }
 
 .product-price-btn button:hover {
-	background-color: #79b0a1;
+	background-color: #4f4557;
+} */
+
+body {
+	background-color: antiquewhite;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: row;
+	height: 210px;
+	width: 327px;
+	margin: 50px auto;
+	border-radius: 7px;
+	box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+	overflow: hidden;
+}
+
+.product-img {
+	height: 210px;
+	width: 164px;
+}
+
+.product-img img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+
+.product-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+	width: 163px; /* Adjust width to fit alongside the image */
+	background-color: #ffffff;
+	box-sizing: border-box;
+	text-align: center;
+}
+
+.product-text {
+	margin-bottom: 10px;
+}
+
+.product-text h1 {
+	margin: 0;
+	padding-top: 10px;
+	font-size: larger;
+	color: #474747;
+	font-family: "Roboto", sans-serif;
+}
+
+.product-price {
+	margin: 10px 0;
+	font-family: "Trocchi", serif;
+	font-size: 20px;
+	font-weight: lighter;
+	color: #474747;
+}
+
+.product-price span {
+	font-family: "Suranna", serif;
+	font-size: 24px;
+	color: #474747;
+}
+
+.product-btn {
+	margin-top: 10px;
+}
+
+.product-btn button {
+	display: inline-block;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 60px;
+	font-family: "Raleway", sans-serif;
+	font-size: 14px;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 0.2em;
+	color: #f4eee0;
+	background-color: #6d5d6e;
+	cursor: pointer;
+	outline: none;
+	transition: background-color 0.3s ease;
+}
+
+.product-btn button:hover {
+	background-color: #4f4557;
 }

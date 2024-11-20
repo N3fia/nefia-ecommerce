@@ -1,28 +1,9 @@
-/* .nav-conta {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	background-color: #8d6e63;
-}
-.logo {
-	width: 150px;
-	height: 150px;
-	padding: 20px 0 10px 20px;
-}
-.list {
-	display: flex;
-	list-style-type: none;
-	gap: 100px;
-} */
-/* 
-
-/* Basic styles for the navbar */
 .nav-conta {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding: 1rem 2rem;
-	background-color: #fff;
+	background-color: #f4eee0;
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -33,7 +14,7 @@
 
 .list {
 	display: flex;
-	gap: 2rem;
+	gap: 7rem;
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
@@ -41,8 +22,9 @@
 
 .list a {
 	text-decoration: none;
-	color: black;
-	font-weight: bold;
+	color: #393646;
+	font-weight: 400;
+	font-size: larger;
 }
 
 /* Mobile responsive: Flex direction column for smaller screens */

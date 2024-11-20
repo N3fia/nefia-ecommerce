@@ -10,12 +10,12 @@ span.image-container img {
 	height: 500px;
 }
 
-span button.product-price-btn {
+.btn button {
 	float: right;
-	/* display: inline-block; */
-	height: 300px;
-	width: 276px;
-	margin: 50px 40px 0 16px;
+	display: inline-block;
+	height: 50px;
+	width: 176px;
+	margin: 0 40px 0 16px;
 	box-sizing: border-box;
 	border: transparent;
 	border-radius: 60px;
@@ -24,12 +24,12 @@ span button.product-price-btn {
 	font-weight: 500;
 	text-transform: uppercase;
 	letter-spacing: 0.2em;
-	color: #ffffff;
-	background-color: #9cebd5;
+	color: #f4eee0;
+	background-color: #6d5d6e;
 	cursor: pointer;
 	outline: none;
 }
 
-.product-price-btn button:hover {
-	background-color: #79b0a1;
+.btn button:hover {
+	background-color: #4f4557;
 }

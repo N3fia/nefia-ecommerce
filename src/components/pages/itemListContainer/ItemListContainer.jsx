@@ -8,7 +8,6 @@ import CircularWithValueLabel from "../../common/circularWithValueLabel/Circular
 import "./itemListContainer.css";
 import { db } from "../../../firebaseConf";
 import { collection, getDocs, query, where } from "firebase/firestore";
-// import { products } from "../../../products";
 
 export const ItemListContainer = () => {
 	const { name } = useParams();
@@ -30,30 +29,7 @@ export const ItemListContainer = () => {
 
 			setItems(legibleArr);
 		});
-
-		// const catName = products.filter(
-		// 	(producto) => producto.category === category
-		// );
-		// const getProducts = new Promise((resolve) => {
-		// 	resolve(category ? catName : products);
-		// });
-		// getProducts.then((res) => {
-		// 	setTimeout(() => {
-		// 		setItems(res);
-		// 	}, 2000);
-		// });
 	}, [name]);
-
-	// if (items.length === 0) {
-	// 	return <h1>loading...</h1>;
-	// }
-
-	// const funcionParaAgregar = () => {
-	// 	const productsCollection = collection(db, "products");
-	// 	products.forEach((product) => {
-	// 		addDoc(productsCollection, product);
-	// 	});
-	// };
 
 	if (items.length === 0) {
 		return (
@@ -70,12 +46,10 @@ export const ItemListContainer = () => {
 				className="item-list-heading"
 				sx={{ marginTop: "32px" }}
 			>
-				All Products
+				{name ? ` ${name}` : "All Products"}
 			</Typography>
 
 			<ItemList items={items} />
-
-			{/* <button onClick={funcionParaAgregar}>cargar prod</button> */}
 		</div>
 	);
 };

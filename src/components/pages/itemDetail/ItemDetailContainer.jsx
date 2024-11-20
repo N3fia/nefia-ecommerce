@@ -6,6 +6,7 @@ import { CartContext } from "../../../context/CartContext";
 // import { toast } from "sonner";
 import { db } from "../../../firebaseConf";
 import { collection, doc, getDoc } from "firebase/firestore";
+import "./itemDetailContainer.css";
 
 const ItemDetailContainer = () => {
 	const { id } = useParams();
