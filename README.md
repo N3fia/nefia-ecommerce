@@ -46,9 +46,9 @@ vite.config.js # Vite configuration └── README.md # Project documentation
 
 🔧 Technologies Used
 
-React JS: Component-based front-end library. Vite: Next-generation build tool. C
-SS Modules for styling. ESLint: Codelinting and quality assurance. Vercel:
-Deployment platform for modern web applications.
+React JS: Component-based front-end library. FireBase: for database Vite:
+Next-generation build tool. CSS Modules for styling. ESLint: Codelinting and
+quality assurance. Vercel: Deployment platform for modern web applications.
 
 🎥 Preview
 
