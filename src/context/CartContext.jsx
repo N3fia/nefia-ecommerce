@@ -6,72 +6,44 @@ export const CartContext = createContext();
 export const CartContextProvider = ({ children }) => {
 	const [cart, setCart] = useState([]);
 
-	// const addToCart = (product) => {
-	// 	let isInCart = cart.some((e) => e.id === product.id);
-	// 	if (isInCart) {
-	// 		console.log("se ejecuta el if");
-	// 		let nArray = cart.map((e) => {
-	// 			if (e.id === product.id) {
-	// 				return { ...e, quantity: e.quantity + product.quantity };
-	// 			} else {
-	// 				return e;
-	// 			}
-	// 		});
-	// 		setCart(nArray);
-	// 	} else {
-	// 		console.log("se ejecuta el nuevo array");
-	// 		setCart([...cart, product]);
-	// 	}
-	// };
-
-	//esta es la que funciona ESTA ANDA
-	// const addToCart = (product) => {
-	// 	const isInCart = cart.some((e) => e.id === product.id);
-	// 	const uCart = isInCart
-	// 		? cart.map((e) =>
-	// 				e.id === product.id
-	// 					? { ...e, quantity: e.quantity + (product.quantity || 0) }
-	// 					: e
-	// 		  )
-	// 		: [...cart, { ...product, quantity: product.quantity || 1 }];
-
-	// 	setCart(uCart);
-	// };
-
 	//INTENTO TDE NO AGREGAR AL CARRITO SI EL STOCK MAXIMO DEL PRODUCTO YA ESTA AHI
 
 	const addToCart = (product) => {
-		const isInCart = cart.some((e) => e.id === product.id);
-		const uCart = isInCart
-			? cart.map((e) => {
-					if (e.id === product.id) {
-						if (e.quantity + (product.quantity || 0) > product.stock) {
-							toast.error(
-								"Can't add any more, available Stock is already in your cart.",
-								{ position: "bottom-right" }
-							);
+		let updatedCart = [...cart];
+		const existingProductIndex = cart.findIndex((e) => e.id === product.id);
 
-							// alert(
-							// 	"Can't add any more, available Stock is already in your cart."
-							// );
-							return e;
-						} else {
-							toast.success("Added to cart", { position: "bottom-right" });
-							return { ...e, quantity: e.quantity + (product.quantity || 0) };
-						}
+		if (existingProductIndex !== -1) {
+			const existingProduct = cart[existingProductIndex];
+			const newQuantity = existingProduct.quantity + (product.quantity || 0);
+
+			if (newQuantity > product.stock) {
+				toast.error(
+					"Can't add any more, available Stock is already in your cart.",
+					{
+						position: "bottom-right",
 					}
-					return e;
-			  })
-			: [...cart, { ...product, quantity: product.quantity || 1 }];
+				);
+				return;
+			} else {
+				updatedCart[existingProductIndex] = {
+					...existingProduct,
+					quantity: newQuantity,
+				};
+				toast.success("Added to cart", { position: "bottom-right" });
+			}
+		} else {
+			updatedCart.push({ ...product, quantity: product.quantity || 1 });
+			toast.success("Added to cart", { position: "bottom-right" });
+		}
 
-		setCart(uCart);
+		setCart(updatedCart);
 	};
+
 	const emptyCart = () => {
 		setCart([]);
 	};
 
 	const removeFromCart = (id) => {
-		// console.log(id);
 		let nCart = cart.filter((e) => e.id !== id);
 		setCart(nCart);
 	};

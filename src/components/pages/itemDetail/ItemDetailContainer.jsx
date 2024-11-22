@@ -20,16 +20,11 @@ const ItemDetailContainer = () => {
 		getDoc(docRef).then((res) => {
 			setItem({ ...res.data(), id: res.id });
 		});
-		// let productSelected = products.find((producto) => producto.id === id);
-		// // console.log(productSelected);
-		// setItem(productSelected);
 	}, [id]);
 
 	const onAdd = (qty) => {
 		let obj = { ...item, quantity: qty };
 		addToCart(obj);
-		// toast.success("Added to cart", { position: "bottom-right" });
-		// console.log(obj);
 	};
 	return <ItemDetail item={item} onAdd={onAdd} pQtyCart={pQtyCart} />;
 };

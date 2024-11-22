@@ -1,9 +1,9 @@
 import { useState } from "react";
 import CounterPres from "./CounterPres";
+import "./counter.css";
 
 export const Counter = ({ stock, onAdd, pQtyCart }) => {
 	const [counter, setCounter] = useState(1);
-	// const cartQty =
 
 	const add = () => {
 		stock - pQtyCart > counter

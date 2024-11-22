@@ -1,20 +1,3 @@
-/* .item-list-container {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
-.item-list-heading {
-	text-align: center;
-}
-
-.item-list-loader {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	min-height: 50vh;
-} */
-
 .item-list-container {
 	display: flex;
 	flex-direction: column;
@@ -35,9 +18,9 @@
 
 .item-list-grid {
 	display: flex;
-	flex-wrap: wrap; /* Allows items to wrap to the next row if space runs out */
-	gap: 16px; /* Adds space between items */
-	justify-content: center; /* Centers items within the container */
+	flex-wrap: wrap;
+	gap: 16px;
+	justify-content: center;
 	width: 100%;
 	margin-top: 16px;
 }

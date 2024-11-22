@@ -26,11 +26,9 @@ const ItemDetail = ({ item, onAdd, pQtyCart }) => {
 					<p>{item.description}</p>
 				</div>
 				<span className="new-span">{item.price}</span>$
-				<div className="new-product-price-btn">
+				{/* <div className="new-product-price-btn"> */}
+				<div className="">
 					<Counter stock={item.stock} onAdd={onAdd} pQtyCart={pQtyCart} />
-					{/* <Link to={`/itemDetail/${item.id}`}> */}
-					{/* <button type="button">Details</button> */}
-					{/* </Link> */}
 				</div>
 			</div>
 		</div>
