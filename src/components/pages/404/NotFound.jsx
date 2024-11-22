@@ -6,7 +6,7 @@ const NotFound = () => {
 		<div>
 			<span className="image-container">
 				<img
-					src="./../src/assets/images/404_1000.svg"
+					src="src/assets/images/404_1000.svg"
 					alt="404 image - page not found"
 				/>
 				<div className="btn">
