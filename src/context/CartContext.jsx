@@ -6,8 +6,6 @@ export const CartContext = createContext();
 export const CartContextProvider = ({ children }) => {
 	const [cart, setCart] = useState([]);
 
-	//INTENTO TDE NO AGREGAR AL CARRITO SI EL STOCK MAXIMO DEL PRODUCTO YA ESTA AHI
-
 	const addToCart = (product) => {
 		let updatedCart = [...cart];
 		const existingProductIndex = cart.findIndex((e) => e.id === product.id);

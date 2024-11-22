@@ -27,7 +27,6 @@
 	font-size: larger;
 }
 
-/* Mobile responsive: Flex direction column for smaller screens */
 @media (max-width: 768px) {
 	.nav-conta {
 		flex-direction: column;
@@ -37,7 +36,7 @@
 	.list {
 		flex-direction: column;
 		width: 100%;
-		display: none; /* Initially hidden on mobile */
+		display: none;
 	}
 
 	.list a {
@@ -46,11 +45,10 @@
 	}
 
 	.nav-conta.active .list {
-		display: flex; /* Show menu when active */
+		display: flex;
 	}
 }
 
-/* Hamburger menu styles */
 .hamburger {
 	display: none;
 	cursor: pointer;
@@ -67,6 +65,6 @@
 
 @media (max-width: 768px) {
 	.hamburger {
-		display: flex; /* Show hamburger on mobile */
+		display: flex;
 	}
 }

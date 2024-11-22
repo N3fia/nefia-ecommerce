@@ -12,7 +12,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 		top: 13,
 		border: `2px solid ${theme.palette.background.paper}`,
 		padding: "0 4px",
-	}, // probar a crear un css para esta parte
+	},
 }));
 
 export const CartWidget = () => {
